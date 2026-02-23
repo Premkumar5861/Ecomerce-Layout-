@@ -1,0 +1,24 @@
+import React from 'react'
+import products from '../products'
+import { Row,Col } from 'react-bootstrap'
+import ProductScreen from './screens/ProductScreen'
+
+function Home() {
+  return (
+    <div>
+      <h1 className='text-center mt-2 h-100'>Latest Products</h1>
+
+      <Row>
+        {products.map((product)=>(
+          <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
+           <ProductScreen product={product}/>
+            {/* <h3>{product.name}</h3> */}
+           
+          </Col>
+        ))}
+      </Row>
+    </div>
+  )
+}
+
+export default Home
